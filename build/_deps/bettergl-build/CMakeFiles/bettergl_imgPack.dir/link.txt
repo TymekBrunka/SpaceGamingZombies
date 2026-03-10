@@ -1,3 +1,0 @@
-"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\bettergl_imgPack.dir/objects.a
-C:\Users\Technik\scoop\apps\mingw\current\bin\ar.exe qc CMakeFiles\bettergl_imgPack.dir/objects.a @CMakeFiles\bettergl_imgPack.dir\objects1.rsp
-C:\Users\Technik\scoop\apps\mingw\current\bin\c++.exe -g -Wl,--whole-archive CMakeFiles\bettergl_imgPack.dir/objects.a -Wl,--no-whole-archive -o bettergl_imgPack.exe -Wl,--out-implib,libbettergl_imgPack.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\bettergl_imgPack.dir\linkLibs.rsp

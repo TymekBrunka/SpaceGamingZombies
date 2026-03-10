@@ -1,2 +1,0 @@
-C:\Users\Technik\scoop\apps\mingw\current\bin\ar.exe qc libbettergl_glad.a CMakeFiles/bettergl_glad.dir/src/glad/src/glad.c.obj
-C:\Users\Technik\scoop\apps\mingw\current\bin\ranlib.exe libbettergl_glad.a

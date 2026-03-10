@@ -1,2 +1,0 @@
-C:\Users\Technik\scoop\apps\mingw\current\bin\ar.exe qc libbetterGL.a CMakeFiles/betterGL.dir/src/Debugging.cpp.obj CMakeFiles/betterGL.dir/src/Program.cpp.obj CMakeFiles/betterGL.dir/src/Assets.cpp.obj
-C:\Users\Technik\scoop\apps\mingw\current\bin\ranlib.exe libbetterGL.a

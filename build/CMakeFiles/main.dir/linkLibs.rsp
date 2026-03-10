@@ -1,1 +1,0 @@
- C:/Users/Technik/Documents/kody/Tymek/CMAKEInstallCache/AMD64/Windows/installed/lib/libglfw3.a "_deps/bettergl-build/libbetterGL.a" libvertex.a libfragment.a "_deps/bettergl-build/libbettergl_glad.a" "_deps/bettergl-build/libbettergl_stbimage.a" -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 

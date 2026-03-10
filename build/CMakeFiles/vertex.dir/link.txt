@@ -1,2 +1,0 @@
-C:\Users\Technik\scoop\apps\mingw\current\bin\ar.exe qc libvertex.a CMakeFiles/vertex.dir/vertex.glsl.cpp.obj
-C:\Users\Technik\scoop\apps\mingw\current\bin\ranlib.exe libvertex.a

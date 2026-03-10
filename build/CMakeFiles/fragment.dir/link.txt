@@ -1,2 +1,0 @@
-C:\Users\Technik\scoop\apps\mingw\current\bin\ar.exe qc libfragment.a CMakeFiles/fragment.dir/fragment.glsl.cpp.obj
-C:\Users\Technik\scoop\apps\mingw\current\bin\ranlib.exe libfragment.a

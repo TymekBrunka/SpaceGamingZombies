@@ -1,3 +1,4 @@
 .cache/
 build/
-Session.vim/
+Session.vim
+sgz_rd.cap

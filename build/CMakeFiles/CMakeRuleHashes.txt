@@ -1,0 +1,5 @@
+# Hashes of file build rules.
+75464f395278048f756f5158f71d8efb CMakeFiles/fragment_file
+75464f395278048f756f5158f71d8efb CMakeFiles/vertex_file
+9e13dcadacabbeeab71e138e1b551e87 fragment.glsl.hpp
+be1da01ed0fe7a238fb4412e0c1f210e vertex.glsl.hpp

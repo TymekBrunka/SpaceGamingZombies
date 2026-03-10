@@ -1,0 +1,62 @@
+[
+{
+  "directory": "C:/Users/Technik/Documents/kody/Tymek/kody/Space_Gaming_Zombies/build",
+  "command": "C:\\Users\\Technik\\scoop\\apps\\mingw\\current\\bin\\c++.exe  @CMakeFiles/vertex.dir/includes_CXX.rsp -g -o CMakeFiles\\vertex.dir\\vertex.glsl.cpp.obj -c C:\\Users\\Technik\\Documents\\kody\\Tymek\\kody\\Space_Gaming_Zombies\\build\\vertex.glsl.cpp",
+  "file": "C:/Users/Technik/Documents/kody/Tymek/kody/Space_Gaming_Zombies/build/vertex.glsl.cpp",
+  "output": "CMakeFiles/vertex.dir/vertex.glsl.cpp.obj"
+},
+{
+  "directory": "C:/Users/Technik/Documents/kody/Tymek/kody/Space_Gaming_Zombies/build",
+  "command": "C:\\Users\\Technik\\scoop\\apps\\mingw\\current\\bin\\c++.exe  @CMakeFiles/fragment.dir/includes_CXX.rsp -g -o CMakeFiles\\fragment.dir\\fragment.glsl.cpp.obj -c C:\\Users\\Technik\\Documents\\kody\\Tymek\\kody\\Space_Gaming_Zombies\\build\\fragment.glsl.cpp",
+  "file": "C:/Users/Technik/Documents/kody/Tymek/kody/Space_Gaming_Zombies/build/fragment.glsl.cpp",
+  "output": "CMakeFiles/fragment.dir/fragment.glsl.cpp.obj"
+},
+{
+  "directory": "C:/Users/Technik/Documents/kody/Tymek/kody/Space_Gaming_Zombies/build",
+  "command": "C:\\Users\\Technik\\scoop\\apps\\mingw\\current\\bin\\c++.exe  @CMakeFiles/main.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles\\main.dir\\src\\main.cpp.obj -c C:\\Users\\Technik\\Documents\\kody\\Tymek\\kody\\Space_Gaming_Zombies\\src\\main.cpp",
+  "file": "C:/Users/Technik/Documents/kody/Tymek/kody/Space_Gaming_Zombies/src/main.cpp",
+  "output": "CMakeFiles/main.dir/src/main.cpp.obj"
+},
+{
+  "directory": "C:/Users/Technik/Documents/kody/Tymek/kody/Space_Gaming_Zombies/build/_deps/bettergl-build",
+  "command": "C:\\Users\\Technik\\scoop\\apps\\mingw\\current\\bin\\c++.exe   -g -o CMakeFiles\\bettergl_bytePack.dir\\src\\assetPackers\\bytePacker.cpp.obj -c C:\\Users\\Technik\\Documents\\kody\\Tymek\\CPMcache\\bettergl\\7834\\src\\assetPackers\\bytePacker.cpp",
+  "file": "C:/Users/Technik/Documents/kody/Tymek/CPMcache/bettergl/7834/src/assetPackers/bytePacker.cpp",
+  "output": "_deps/bettergl-build/CMakeFiles/bettergl_bytePack.dir/src/assetPackers/bytePacker.cpp.obj"
+},
+{
+  "directory": "C:/Users/Technik/Documents/kody/Tymek/kody/Space_Gaming_Zombies/build/_deps/bettergl-build",
+  "command": "C:\\Users\\Technik\\scoop\\apps\\mingw\\current\\bin\\cc.exe  @CMakeFiles/bettergl_glad.dir/includes_C.rsp -g -o CMakeFiles\\bettergl_glad.dir\\src\\glad\\src\\glad.c.obj -c C:\\Users\\Technik\\Documents\\kody\\Tymek\\CPMcache\\bettergl\\7834\\src\\glad\\src\\glad.c",
+  "file": "C:/Users/Technik/Documents/kody/Tymek/CPMcache/bettergl/7834/src/glad/src/glad.c",
+  "output": "_deps/bettergl-build/CMakeFiles/bettergl_glad.dir/src/glad/src/glad.c.obj"
+},
+{
+  "directory": "C:/Users/Technik/Documents/kody/Tymek/kody/Space_Gaming_Zombies/build/_deps/bettergl-build",
+  "command": "C:\\Users\\Technik\\scoop\\apps\\mingw\\current\\bin\\cc.exe  @CMakeFiles/bettergl_stbimage.dir/includes_C.rsp -g -o CMakeFiles\\bettergl_stbimage.dir\\src\\stb\\stb_image.c.obj -c C:\\Users\\Technik\\Documents\\kody\\Tymek\\CPMcache\\bettergl\\7834\\src\\stb\\stb_image.c",
+  "file": "C:/Users/Technik/Documents/kody/Tymek/CPMcache/bettergl/7834/src/stb/stb_image.c",
+  "output": "_deps/bettergl-build/CMakeFiles/bettergl_stbimage.dir/src/stb/stb_image.c.obj"
+},
+{
+  "directory": "C:/Users/Technik/Documents/kody/Tymek/kody/Space_Gaming_Zombies/build/_deps/bettergl-build",
+  "command": "C:\\Users\\Technik\\scoop\\apps\\mingw\\current\\bin\\c++.exe  @CMakeFiles/betterGL.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles\\betterGL.dir\\src\\Debugging.cpp.obj -c C:\\Users\\Technik\\Documents\\kody\\Tymek\\CPMcache\\bettergl\\7834\\src\\Debugging.cpp",
+  "file": "C:/Users/Technik/Documents/kody/Tymek/CPMcache/bettergl/7834/src/Debugging.cpp",
+  "output": "_deps/bettergl-build/CMakeFiles/betterGL.dir/src/Debugging.cpp.obj"
+},
+{
+  "directory": "C:/Users/Technik/Documents/kody/Tymek/kody/Space_Gaming_Zombies/build/_deps/bettergl-build",
+  "command": "C:\\Users\\Technik\\scoop\\apps\\mingw\\current\\bin\\c++.exe  @CMakeFiles/betterGL.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles\\betterGL.dir\\src\\Program.cpp.obj -c C:\\Users\\Technik\\Documents\\kody\\Tymek\\CPMcache\\bettergl\\7834\\src\\Program.cpp",
+  "file": "C:/Users/Technik/Documents/kody/Tymek/CPMcache/bettergl/7834/src/Program.cpp",
+  "output": "_deps/bettergl-build/CMakeFiles/betterGL.dir/src/Program.cpp.obj"
+},
+{
+  "directory": "C:/Users/Technik/Documents/kody/Tymek/kody/Space_Gaming_Zombies/build/_deps/bettergl-build",
+  "command": "C:\\Users\\Technik\\scoop\\apps\\mingw\\current\\bin\\c++.exe  @CMakeFiles/betterGL.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles\\betterGL.dir\\src\\Assets.cpp.obj -c C:\\Users\\Technik\\Documents\\kody\\Tymek\\CPMcache\\bettergl\\7834\\src\\Assets.cpp",
+  "file": "C:/Users/Technik/Documents/kody/Tymek/CPMcache/bettergl/7834/src/Assets.cpp",
+  "output": "_deps/bettergl-build/CMakeFiles/betterGL.dir/src/Assets.cpp.obj"
+},
+{
+  "directory": "C:/Users/Technik/Documents/kody/Tymek/kody/Space_Gaming_Zombies/build/_deps/bettergl-build",
+  "command": "C:\\Users\\Technik\\scoop\\apps\\mingw\\current\\bin\\c++.exe  @CMakeFiles/bettergl_imgPack.dir/includes_CXX.rsp -g -o CMakeFiles\\bettergl_imgPack.dir\\src\\assetPackers\\imagePacker.cpp.obj -c C:\\Users\\Technik\\Documents\\kody\\Tymek\\CPMcache\\bettergl\\7834\\src\\assetPackers\\imagePacker.cpp",
+  "file": "C:/Users/Technik/Documents/kody/Tymek/CPMcache/bettergl/7834/src/assetPackers/imagePacker.cpp",
+  "output": "_deps/bettergl-build/CMakeFiles/bettergl_imgPack.dir/src/assetPackers/imagePacker.cpp.obj"
+}
+]

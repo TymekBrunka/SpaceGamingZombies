@@ -1,0 +1,2 @@
+C:\Users\Technik\scoop\apps\mingw\current\bin\ar.exe qc libbettergl_stbimage.a CMakeFiles/bettergl_stbimage.dir/src/stb/stb_image.c.obj
+C:\Users\Technik\scoop\apps\mingw\current\bin\ranlib.exe libbettergl_stbimage.a

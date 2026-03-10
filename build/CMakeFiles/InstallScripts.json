@@ -1,0 +1,8 @@
+{
+	"InstallScripts" : 
+	[
+		"C:/Users/Technik/Documents/kody/Tymek/kody/Space_Gaming_Zombies/build/cmake_install.cmake",
+		"C:/Users/Technik/Documents/kody/Tymek/kody/Space_Gaming_Zombies/build/_deps/bettergl-build/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

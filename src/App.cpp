@@ -44,7 +44,6 @@ void App::resize(int width, int height) {
 }
 
 void App::init(const char *title) {
-  std::cout << "hi\n";
   try {
     create_window(title);
     set_up();

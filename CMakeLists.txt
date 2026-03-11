@@ -22,3 +22,6 @@ target_link_libraries(
   main
   app
 )
+# add_dependencies(main betterGL_dynamic_dependant)
+
+bettergl_cpdlls(main)

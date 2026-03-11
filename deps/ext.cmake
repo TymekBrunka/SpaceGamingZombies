@@ -4,7 +4,7 @@ include(deps/CPM.cmake)
 message("-- bettergl")
 CPMAddPackage(
   NAME bettergl
-  VERSION 0.0.5
+  VERSION 0.0.6
   GITHUB_REPOSITORY TymekBrunka/bettyergl
   GIT_TAG main
   OPTIONS

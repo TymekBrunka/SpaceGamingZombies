@@ -1,5 +1,8 @@
 #include <App.hpp>
+#include <iostream>
 
 int main(void) {
-  App("Space Gaming Zombies");
+  std::cout << "hai\n";
+  App app = App();
+  app.init("Space Gaming Zombies");
 }

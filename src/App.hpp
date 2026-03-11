@@ -4,15 +4,24 @@
 #include <GLFW/glfw3.h>
 
 class App {
-  GLFWwindow *window;
-  bgl::Program program;
-  bgl::VAO vao;
+public:
+  float aspectRatio;
+  bgl::vec2 pixelSize;
+  int windowSize[2];
 
-  void create_window(const char* title);
+private:
+  bgl::VAO vao;
+  bgl::Program program;
+  GLFWwindow *window;
+
+  void create_window(const char *title);
   void set_up();
   void render_loop();
-  void cleanup();
+
 public:
-  App();
-  App(const char* title);
+  App() = default;
+  void init(const char* title);
+  void cleanup();
+
+  void resize(int width, int height);
 };

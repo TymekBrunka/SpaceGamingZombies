@@ -1,7 +1,9 @@
 #include <App.hpp>
+#include <GLFW/glfw3.h>
 #include <bettergl/Debugging.hpp>
 #include <bettergl/Program.hpp>
 #include <exception>
+#include <iostream>
 
 #include "fragment.glsl.hpp"
 #include "vertex.glsl.hpp"
@@ -25,15 +27,30 @@ static void error_callback(int error, const char *description) {
   fprintf(stderr, "Error: %s\n", description);
 }
 
-App::App() {}
+static void framebuffer_size_callback(GLFWwindow *window, int width, int height) {
+  App* app = reinterpret_cast<App *>(glfwGetWindowUserPointer(window));
+  app->resize(width, height);
+}
 
-App::App(const char* title) {
-  try{
+void App::resize(int width, int height) {
+  // glfwGetFramebufferSize(window, &width, &height);
+  windowSize[0] = width;
+  windowSize[1] = height;
+  aspectRatio = width / (float)height;
+  pixelSize[0] = 1 / (float)width;
+  pixelSize[1] = 1 / (float)height;
+
+  glViewport(0, 0, width, height);
+}
+
+void App::init(const char *title) {
+  std::cout << "hi\n";
+  try {
     create_window(title);
     set_up();
     render_loop();
     cleanup();
-  } catch (std::exception& err) {
+  } catch (std::exception &err) {
     std::cout << err.what() << "\n";
   }
 }
@@ -57,7 +74,9 @@ void App::create_window(const char *title) {
 }
 
 void App::set_up() {
+  glfwSetWindowUserPointer(window, reinterpret_cast<void *>(this));
   glfwSetKeyCallback(window, key_callback);
+  glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 
   glfwMakeContextCurrent(window);
   gladLoadGL(); // only then we can load
@@ -92,9 +111,8 @@ void App::render_loop() {
   while (!glfwWindowShouldClose(window)) {
     int width, height;
     glfwGetFramebufferSize(window, &width, &height);
-    const float ratio = width / (float)height;
-
     glViewport(0, 0, width, height);
+
     glClear(GL_COLOR_BUFFER_BIT);
 
     glUseProgram(program);

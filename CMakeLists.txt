@@ -2,8 +2,8 @@ cmake_minimum_required(VERSION 3.23)
 project(SpaceGamingZombies LANGUAGES CXX)
 include(deps/ext.cmake)
 
-betterGL_bytepack(vertex src/shaders/vertex.glsl vertex.glsl r)
-betterGL_bytepack(fragment src/shaders/fragment.glsl fragment.glsl)
+betterGL_bytepack(vertex assets/shaders/vertex.glsl vertex.glsl)
+betterGL_bytepack(fragment assets/shaders/fragment.glsl fragment.glsl)
 
 add_library(app SHARED src/App.cpp)
 target_include_directories(app PRIVATE src)

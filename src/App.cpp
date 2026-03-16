@@ -1,11 +1,11 @@
 #include <App.hpp>
-#include <stb_image.h>
 #include <GLFW/glfw3.h>
 #include <bettergl/Debugging.hpp>
 #include <bettergl/Program.hpp>
 #include <exception>
-#include <iostream>
 #include <glm/gtc/matrix_transform.hpp>
+#include <iostream>
+#include <stb_image.h>
 
 #include "SpriteRenderer.hpp"
 
@@ -108,25 +108,30 @@ void App::set_up() {
 
   // aspectRatio_location = glGetUniformLocation(program, "aspectRatio");
   // pixelSize_location = glGetUniformLocation(program, "pixelSize");
- 
+
+  glEnable(GL_BLEND);
+  glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
   stbi_set_flip_vertically_on_load(true);
   glGenTextures(1, &spritesheet);
   glActiveTexture(GL_TEXTURE0);
   glBindTexture(GL_TEXTURE_2D, spritesheet);
 
-  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_BORDER);	
+  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_BORDER);
   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_BORDER);
   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 
-  glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, SPRITES.width, SPRITES.height, 0, GL_RGBA, GL_UNSIGNED_BYTE, SPRITES.getRes().data);
+  glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, SPRITES.width, SPRITES.height, 0,
+               GL_RGBA, GL_UNSIGNED_BYTE, SPRITES.getRes().data);
 
   mainRenderer.init(program);
-  Sprite playerS = {
-    .tex_cords = {0.0, 0.5, 0.25, 1.0},
-    .transforms = glm::rotate(glm::mat4(200.0f), glm::radians(45.0f), glm::vec3(0.0f, 0.0f, 1.0f))
-  };
+  Sprite playerS = {.tex_cords = {0.0, 0.5, 0.25, 1.0},
+                    .size = {200, 200}};
+
+  Sprite zombieS = {.tex_cords = {0.0, 0.0, 0.25, 0.5}, .size = {200, 200}};
   mainRenderer.sprites.push_back(playerS);
+  mainRenderer.sprites.push_back(zombieS);
   mainRenderer.rebuildVBO();
 
   // const GLint mvp_location = glGetUniformLocation(program, "MVP");
@@ -150,6 +155,15 @@ void App::render_loop() {
     glViewport(0, 0, width, height);
 
     glClear(GL_COLOR_BUFFER_BIT);
+    mainRenderer.sprites[1].transforms = glm::rotate(
+        glm::translate(glm::mat4(1.0f), glm::vec3(50.0f, 50.0f, 0.0f)),
+        glm::radians((float)glfwGetTime() * 50.0f), glm::vec3(0.f, 0.0f, 1.0f));
+
+    mainRenderer.sprites[0].transforms = glm::rotate(
+        glm::translate(glm::mat4(1.0f), glm::vec3(-50.0f, -50.0f, 0.0f)),
+        glm::radians((float)glfwGetTime() * 100.0f), glm::vec3(0.f, 0.0f, -1.0f));
+
+    mainRenderer.rebuildVBO();
     mainRenderer.render();
 
     glfwSwapBuffers(window);

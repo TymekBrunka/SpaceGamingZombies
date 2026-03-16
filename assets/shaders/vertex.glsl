@@ -1,11 +1,22 @@
 #version 330
-uniform mat4 MVP;
-in vec3 vCol;
-in vec2 vPos;
-out vec3 color;
+uniform sampler2D sprites;
+uniform vec2 pixelSize;
+
+in mat4 transforms;
+in vec4 tex_cords;
+
+in vec2 shape_pos;
+in vec2 shape_tex_pos;
+#define stp shape_tex_pos
+
+out vec2 tex_pos;
 
 void main()
 {
-  gl_Position = vec4(vPos, 0.0, 1.0);
-  color = vCol;
+  gl_Position = transforms * vec4(shape_pos, 1.0, 1.0);
+  gl_Position.x *= pixelSize.x;
+  gl_Position.y *= pixelSize.y;
+  gl_Position.zw = vec2(1.0);
+  tex_pos.x = tex_cords.b * stp.x + tex_cords.r * (1.0 - stp.x);
+  tex_pos.y = tex_cords.a * stp.y + tex_cords.g * (1.0 - stp.y);
 }

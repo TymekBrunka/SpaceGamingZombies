@@ -1,4 +1,5 @@
 #pragma once
+#include "SpriteRenderer.hpp"
 #include <bettergl/GLTypes.hpp>
 #include <bettergl/MathTypes.hpp>
 #include <GLFW/glfw3.h>
@@ -9,6 +10,7 @@ public:
   bgl::vec2 pixelSize;
   int windowSize[2];
 
+  bgl::Texture2D spritesheet;
 private:
   bgl::VAO vao;
   bgl::Program program;
@@ -17,6 +19,8 @@ private:
   void create_window(const char *title);
   void set_up();
   void render_loop();
+
+  SpriteRenderer mainRenderer;
 
 public:
   App() = default;

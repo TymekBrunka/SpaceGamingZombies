@@ -29,3 +29,13 @@ if (NOT glfw3_FOUND)
     INSTALL_DIR "${CM_INSTALL_DIR}"
   )
 endif()
+
+message("-- glm 1.0.3")
+CPMAddPackage(
+  NAME glm
+  VERSION 1.0.3
+  GITHUB_REPOSITORY g-truc/glm
+  GIT_TAG 1.0.3
+  OPTIONS
+    "GLM_ENABLE_CXX_20 ON"
+)

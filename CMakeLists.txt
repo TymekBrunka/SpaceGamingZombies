@@ -5,10 +5,17 @@ include(deps/ext.cmake)
 betterGL_bytepack(vertex assets/shaders/vertex.glsl vertex.glsl)
 betterGL_bytepack(fragment assets/shaders/fragment.glsl fragment.glsl)
 
-add_library(app SHARED src/App.cpp)
+betterGL_imgpack(SPRITES assets/textures/spritesheet.png sprites.png n 4)
+
+add_library(app SHARED
+  src/App.cpp
+  src/SpriteRenderer.cpp
+)
 target_include_directories(app PRIVATE src)
 target_link_libraries(app PUBLIC
   glfw
+  glm::glm
+  bettergl_stbimage
   $<$<CONFIG:DEBUG>:betterGL_dynamic>
   $<$<CONFIG:RELEASE>:betterGL_static>
 

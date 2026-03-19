@@ -1,8 +1,11 @@
 #pragma once
 #include "SpriteRenderer.hpp"
+#include <array>
 #include <bettergl/GLTypes.hpp>
 #include <bettergl/MathTypes.hpp>
 #include <GLFW/glfw3.h>
+#include <cstdint>
+#include <mutex>
 
 class App {
 public:
@@ -20,12 +23,16 @@ private:
   void set_up();
   void render_loop();
 
-  SpriteRenderer mainRenderer;
-
 public:
   App() = default;
   void init(const char* title);
   void cleanup();
+
+  std::mutex inputMutex;
+  std::array<int16_t, 2> input;
+
+  std::mutex renderMutex;
+  SpriteRenderer mainRenderer;
 
   void resize(int width, int height);
 };

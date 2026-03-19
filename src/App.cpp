@@ -7,15 +7,18 @@
 #include <iostream>
 #include <stb_image.h>
 
+#include "glm/ext/matrix_transform.hpp"
+#include "glm/trigonometric.hpp"
+
+#include "AtlasLoader.hpp"
 #include "SpriteRenderer.hpp"
 
 #include "bettergl/GLTypes.hpp"
 #include "fragment.glsl.hpp"
-#include "glm/ext/matrix_transform.hpp"
-#include "glm/trigonometric.hpp"
 #include "vertex.glsl.hpp"
 
 #include "sprites.png.hpp"
+#include "spritesheet.json.hpp"
 
 typedef struct Vertex {
   bgl::vec2 pos;
@@ -55,7 +58,7 @@ void App::resize(int width, int height) {
 
   glViewport(0, 0, width, height);
   // glUniform2fv(aspectRatio_location, 1, &aspectRatio);
-  glUniform2fv(pixelSize_location, 1, pixelSize);
+  glUniform2fv(pixelSize_location, 1, &pixelSize[0]);
 }
 
 void App::init(const char *title) {
@@ -97,17 +100,9 @@ void App::set_up() {
   glfwSwapInterval(1);
   bgl::setUpDebugger();
 
-  // GLuint vertex_buffer;
-  // glGenBuffers(1, &vertex_buffer);
-  // glBindBuffer(GL_ARRAY_BUFFER, vertex_buffer);
-  // glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
-
   program = bgl::createProgram("main program", vertex.getRes().c_str(),
                                fragment.getRes().c_str())
                 .unwrapExit();
-
-  // aspectRatio_location = glGetUniformLocation(program, "aspectRatio");
-  // pixelSize_location = glGetUniformLocation(program, "pixelSize");
 
   glEnable(GL_BLEND);
   glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
@@ -125,27 +120,18 @@ void App::set_up() {
   glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, SPRITES.width, SPRITES.height, 0,
                GL_RGBA, GL_UNSIGNED_BYTE, SPRITES.getRes().data);
 
-  mainRenderer.init(program);
-  Sprite playerS = {.tex_cords = {0.0, 0.5, 0.25, 1.0},
-                    .size = {200, 200}};
+  Atlas atlas;
+  atlas.load(SPRITES_atlas_json.getRes().c_str(), SPRITES.width,
+             SPRITES.height);
 
-  Sprite zombieS = {.tex_cords = {0.0, 0.0, 0.25, 0.5}, .size = {200, 200}};
+  mainRenderer.init(program);
+  Sprite playerS = {.tex_cords = atlas.data["spaceship"], .size = {200, 200}};
+
+  Sprite zombieS = {.tex_cords = atlas.data["zombie_ping_pong"],
+                    .size = {200, 200}};
   mainRenderer.sprites.push_back(playerS);
   mainRenderer.sprites.push_back(zombieS);
   mainRenderer.rebuildVBO();
-
-  // const GLint mvp_location = glGetUniformLocation(program, "MVP");
-  // const GLint vpos_location = glGetAttribLocation(program, "vPos");
-  //
-  // glGenVertexArrays(1, &vao);
-  // bgl::labelObject(GL_VERTEX_ARRAY, vao, "vertex array");
-  // glBindVertexArray(vao);
-  // glEnableVertexAttribArray(vpos_location);
-  // glVertexAttribPointer(vpos_location, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex),
-  //                       (void *)offsetof(Vertex, pos));
-  // glEnableVertexAttribArray(vcol_location);
-  // glVertexAttribPointer(vcol_location, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex),
-  //                       (void *)offsetof(Vertex, col));
 }
 
 void App::render_loop() {
@@ -161,7 +147,8 @@ void App::render_loop() {
 
     mainRenderer.sprites[0].transforms = glm::rotate(
         glm::translate(glm::mat4(1.0f), glm::vec3(-50.0f, -50.0f, 0.0f)),
-        glm::radians((float)glfwGetTime() * 100.0f), glm::vec3(0.f, 0.0f, -1.0f));
+        glm::radians((float)glfwGetTime() * 100.0f),
+        glm::vec3(0.f, 0.0f, -1.0f));
 
     mainRenderer.rebuildVBO();
     mainRenderer.render();
@@ -174,6 +161,7 @@ void App::render_loop() {
 void App::cleanup() {
   mainRenderer.cleanup();
   SPRITES.delRes();
+  // SPRITES_atlas_json.delRes();
   glfwDestroyWindow(window);
 
   glfwTerminate();
